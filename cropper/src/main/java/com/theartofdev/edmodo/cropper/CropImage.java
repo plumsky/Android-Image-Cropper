@@ -899,6 +899,11 @@ public final class CropImage {
             mOptions.flipVertically = flipVertically;
             return this;
         }
+
+        public ActivityBuilder setCropFullScreen(boolean cropFullScreen) {
+            mOptions.cropFullScreen = cropFullScreen;
+            return this;
+        }
     }
     //endregion
 

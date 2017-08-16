@@ -272,6 +272,7 @@ public class CropImageView extends FrameLayout {
                     options.maxCropResultHeight = (int) ta.getFloat(R.styleable.CropImageView_cropMaxCropResultHeightPX, options.maxCropResultHeight);
                     options.flipHorizontally = ta.getBoolean(R.styleable.CropImageView_cropFlipHorizontally, options.flipHorizontally);
                     options.flipVertically = ta.getBoolean(R.styleable.CropImageView_cropFlipHorizontally, options.flipVertically);
+                    options.cropFullScreen = ta.getBoolean(R.styleable.CropImageView_cropFullScreen, options.cropFullScreen);
 
                     mSaveBitmapToInstanceState = ta.getBoolean(R.styleable.CropImageView_cropSaveBitmapToInstanceState, mSaveBitmapToInstanceState);
 

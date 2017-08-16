@@ -46,6 +46,8 @@ public class CropOverlayView extends View {
      */
     private boolean mMultiTouchEnabled;
 
+    private boolean mCropFullScreen;
+
     /**
      * Handler from crop window stuff, moving and knowing possition.
      */
@@ -477,6 +479,8 @@ public class CropOverlayView extends View {
         setAspectRatioY(options.aspectRatioY);
 
         setMultiTouchEnabled(options.multiTouchEnabled);
+
+        mCropFullScreen = options.cropFullScreen;
 
         mTouchRadius = options.touchRadius;
 
@@ -917,6 +921,13 @@ public class CropOverlayView extends View {
      * @return true - non straight rotation in place, false - otherwise.
      */
     private boolean calculateBounds(RectF rect) {
+        if (mCropFullScreen) {
+            mCalcBounds.left = 0.0f;
+            mCalcBounds.top = 0.0f;
+            mCalcBounds.right = mViewWidth;
+            mCalcBounds.bottom = mViewHeight;
+            return true;
+        }
 
         float left = BitmapUtils.getRectLeft(mBoundsPoints);
         float top = BitmapUtils.getRectTop(mBoundsPoints);

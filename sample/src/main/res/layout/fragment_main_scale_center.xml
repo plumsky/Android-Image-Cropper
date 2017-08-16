@@ -1,8 +1,8 @@
-<com.theartofdev.edmodo.cropper.CropImageView
-    android:id="@+id/cropImageView"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.theartofdev.edmodo.cropper.CropImageView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cropImageView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:cropAutoZoomEnabled="false"
-    app:cropScaleType="centerInside"/>
+    app:cropFullScreen="true"
+    app:cropScaleType="centerInside" />

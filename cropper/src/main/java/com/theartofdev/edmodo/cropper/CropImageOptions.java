@@ -282,6 +282,11 @@ public class CropImageOptions implements Parcelable {
     public boolean flipVertically;
 
     /**
+     * whether the image should be flipped vertically
+     */
+    public boolean cropFullScreen;
+
+    /**
      * Init options with defaults.
      */
     public CropImageOptions() {
@@ -341,6 +346,7 @@ public class CropImageOptions implements Parcelable {
         rotationDegrees = 90;
         flipHorizontally = false;
         flipVertically = false;
+        cropFullScreen = false;
     }
 
     /**
@@ -393,6 +399,7 @@ public class CropImageOptions implements Parcelable {
         rotationDegrees = in.readInt();
         flipHorizontally = in.readByte() != 0;
         flipVertically = in.readByte() != 0;
+        cropFullScreen = in.readByte() != 0;
     }
 
     @Override
@@ -443,6 +450,7 @@ public class CropImageOptions implements Parcelable {
         dest.writeInt(rotationDegrees);
         dest.writeByte((byte) (flipHorizontally ? 1 : 0));
         dest.writeByte((byte) (flipVertically ? 1 : 0));
+        dest.writeByte((byte) (cropFullScreen ? 1 : 0));
     }
 
     @Override

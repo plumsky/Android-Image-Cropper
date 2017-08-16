@@ -45,6 +45,7 @@
         <attr name="cropMaxCropResultHeightPX" format="float"/>
         <attr name="cropFlipHorizontally" format="boolean"/>
         <attr name="cropFlipVertically" format="boolean"/>
+        <attr name="cropFullScreen" format="boolean"/>
     </declare-styleable>
 
 </resources>
