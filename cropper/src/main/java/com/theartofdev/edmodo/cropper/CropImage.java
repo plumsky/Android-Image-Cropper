@@ -903,6 +903,9 @@ public final class CropImage {
 
         public ActivityBuilder setCropFullScreen(boolean cropFullScreen) {
             mOptions.cropFullScreen = cropFullScreen;
+            return this;
+        }
+
         /**
          * optional, set crop menu crop button title.<br>
          * <i>Default: null, will use resource string: crop_image_menu_crop</i>
