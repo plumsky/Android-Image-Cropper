@@ -34,6 +34,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.provider.MediaStore;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
@@ -902,6 +903,22 @@ public final class CropImage {
 
         public ActivityBuilder setCropFullScreen(boolean cropFullScreen) {
             mOptions.cropFullScreen = cropFullScreen;
+        /**
+         * optional, set crop menu crop button title.<br>
+         * <i>Default: null, will use resource string: crop_image_menu_crop</i>
+         */
+        public ActivityBuilder setCropMenuCropButtonTitle(CharSequence title) {
+            mOptions.cropMenuCropButtonTitle = title;
+            return this;
+        }
+
+
+        /**
+         * Image resource id to use for crop icon instead of text.<br>
+         * <i>Default: 0</i>
+         */
+        public ActivityBuilder setCropMenuCropButtonIcon(@DrawableRes int drawableResource) {
+            mOptions.cropMenuCropButtonIcon = drawableResource;
             return this;
         }
     }

@@ -38,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 .setGuidelines(CropImageView.Guidelines.ON)
                 .setActivityTitle("My Crop")
                 .setCropShape(CropImageView.CropShape.OVAL)
+                .setCropMenuCropButtonTitle("Done")
                 .setRequestedSize(400, 400)
+                .setCropMenuCropButtonIcon(R.drawable.ic_launcher)
                 .start(this);
     }
 

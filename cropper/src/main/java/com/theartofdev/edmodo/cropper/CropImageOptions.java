@@ -285,6 +285,16 @@ public class CropImageOptions implements Parcelable {
      * whether the image should be flipped vertically
      */
     public boolean cropFullScreen;
+    
+    /**
+     * optional, the text of the crop menu crop button
+     */
+    public CharSequence cropMenuCropButtonTitle;
+
+    /**
+     * optional image resource to be used for crop menu crop icon instead of text
+     */
+    public int cropMenuCropButtonIcon;
 
     /**
      * Init options with defaults.
@@ -347,6 +357,9 @@ public class CropImageOptions implements Parcelable {
         flipHorizontally = false;
         flipVertically = false;
         cropFullScreen = false;
+        cropMenuCropButtonTitle = null;
+
+        cropMenuCropButtonIcon = 0;
     }
 
     /**
@@ -400,6 +413,8 @@ public class CropImageOptions implements Parcelable {
         flipHorizontally = in.readByte() != 0;
         flipVertically = in.readByte() != 0;
         cropFullScreen = in.readByte() != 0;
+        cropMenuCropButtonTitle = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
+        cropMenuCropButtonIcon = in.readInt();
     }
 
     @Override
@@ -451,6 +466,8 @@ public class CropImageOptions implements Parcelable {
         dest.writeByte((byte) (flipHorizontally ? 1 : 0));
         dest.writeByte((byte) (flipVertically ? 1 : 0));
         dest.writeByte((byte) (cropFullScreen ? 1 : 0));
+        TextUtils.writeToParcel(cropMenuCropButtonTitle, dest, flags);
+        dest.writeInt(cropMenuCropButtonIcon);
     }
 
     @Override
